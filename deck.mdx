@@ -1,0 +1,37 @@
+# Demonstarting static assets bug.
+
+[Issue 401](https://github.com/jxnblk/mdx-deck/issues/401)
+
+---
+
+You can not include an image by specifying the path to the static asset.
+
+```
+<img src="images/tree.jpg" />
+```
+
+<img src="images/tree.jpg" />
+
+---
+
+Also does not work with Markdown images.
+
+```
+![tree](images/tree.jpg)
+```
+
+![tree](images/tree.jpg)
+
+---
+
+import Tree from "./static/images/tree.jpg";
+
+Works when using imports.
+
+```
+import Tree from "./static/images/tree.jpg";
+
+<img src={Tree} />
+```
+
+<img src={Tree} />
